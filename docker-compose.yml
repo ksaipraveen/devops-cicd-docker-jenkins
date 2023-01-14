@@ -1,0 +1,14 @@
+version: "3"
+services:
+  tomcat:
+    build: /home/ubuntu/jenkinsdocker
+    image: skandikatta/saiwebapplication:Latest
+    container_name: DOCKERJENKINS
+    ports:
+      - 8080:8080
+    networks:
+      - tomcatnetwork
+    
+networks:
+  tomcatnetwork:
+    driver: bridge
