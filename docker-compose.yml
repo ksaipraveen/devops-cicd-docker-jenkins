@@ -5,19 +5,10 @@ services:
     image: skandikatta/saiwebapplication:Latest
     container_name: DOCKERJENKINS
     ports:
-      - 8081:8080
-    
-    deploy:  # This will be considered only in docker swarm.
-      replicas: 3
-      update_config:
-        parallelism: 1
-        delay: 20s
-      restart_policy:
-        condition: on-failure
-        delay: 10s
-        max_attempts: 5  
+      - 8080:8080
+    networks:
+      - tomcatnetwork
     
 networks:
-  default:
-    external:
-      name: tomcatnetwork
+  tomcatnetwork:
+    driver: bridge
