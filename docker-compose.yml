@@ -6,8 +6,7 @@ services:
     container_name: DOCKERJENKINS
     ports:
       - 8080:8080
-    networks:
-      - tomcatnetwork
+    
     deploy:  # This will be considered only in docker swarm.
       replicas: 3
       update_config:
