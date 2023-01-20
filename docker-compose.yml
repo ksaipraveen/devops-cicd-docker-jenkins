@@ -20,4 +20,4 @@ services:
     
 networks:
   tomcatnetwork:
-    driver: bridge
+    driver: overlay
