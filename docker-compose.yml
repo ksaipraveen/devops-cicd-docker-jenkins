@@ -19,5 +19,6 @@ services:
         max_attempts: 5  
     
 networks:
-  tomcatnetwork:
-    driver: overlay
+  default:
+    external:
+      name: tomcatnetwork
